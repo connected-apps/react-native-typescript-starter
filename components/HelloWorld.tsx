@@ -1,6 +1,5 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
-
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 // TODO: we can do better ...readonly? exact? types based on initialState?
 interface Props {
@@ -12,6 +11,9 @@ interface State {
   enthusiasmLevel: number;
 }
 
+const getInitialState = (props: Props) => ({
+  enthusiasmLevel: props.enthusiasmLevel || 1;
+});
 class HelloWorld extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -20,23 +22,22 @@ class HelloWorld extends React.Component<Props, State> {
       throw new Error('You could be a little more enthusiastic. :D');
     }
 
-    this.state = {
-      enthusiasmLevel: props.enthusiasmLevel || 1,
-    };
+    this.state = getInitialState(this.props)
   }
 
-  onIncrement = () =>
-    this.setState({enthusiasmLevel: this.state.enthusiasmLevel + 1});
-    
-  onDecrement = () => {
+  private onIncrement = () =>
+    this.setState({ enthusiasmLevel: this.state.enthusiasmLevel + 1 });
+
+  private onDecrement = () => {
     const { enthusiasmLevel } = this.state;
     if (enthusiasmLevel > 0) {
       const newEnthusiasmLevel = enthusiasmLevel - 1;
-      this.setState({enthusiasmLevel: newEnthusiasmLevel});
+      this.setState({ enthusiasmLevel: newEnthusiasmLevel });
     }
-  }
+  };
 
-  getExclamationMarks = (numChars: number) => Array(numChars + 1).join('!');
+  private getExclamationMarks = (numChars: number) =>
+    Array(numChars + 1).join('!');
 
   render() {
     return (
