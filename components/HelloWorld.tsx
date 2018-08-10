@@ -12,8 +12,9 @@ interface State {
 }
 
 const getInitialState = (props: Props) => ({
-  enthusiasmLevel: props.enthusiasmLevel || 1;
+  enthusiasmLevel: props.enthusiasmLevel || 1,
 });
+
 class HelloWorld extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -22,7 +23,7 @@ class HelloWorld extends React.Component<Props, State> {
       throw new Error('You could be a little more enthusiastic. :D');
     }
 
-    this.state = getInitialState(this.props)
+    this.state = getInitialState(this.props);
   }
 
   private onIncrement = () =>
@@ -43,7 +44,7 @@ class HelloWorld extends React.Component<Props, State> {
     return (
       <View style={styles.root}>
         <Text style={styles.greeting}>
-          Hello{' '}
+          Hello HMR{' '}
           {this.props.name +
             this.getExclamationMarks(this.state.enthusiasmLevel)}
         </Text>
