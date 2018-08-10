@@ -12,7 +12,7 @@ interface State {
 }
 
 const getInitialState = (props: Props) => ({
-  enthusiasmLevel: props.enthusiasmLevel || 1;
+  enthusiasmLevel: props.enthusiasmLevel || 1,
 });
 class HelloWorld extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -22,7 +22,7 @@ class HelloWorld extends React.Component<Props, State> {
       throw new Error('You could be a little more enthusiastic. :D');
     }
 
-    this.state = getInitialState(this.props)
+    this.state = getInitialState(this.props);
   }
 
   private onIncrement = () =>
