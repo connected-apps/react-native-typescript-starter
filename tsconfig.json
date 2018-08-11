@@ -45,8 +45,7 @@
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
     // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
-    // "resolveJsonModule": true
-
+    // "resolveJsonModule": true /* This option can only be specified when module code generation is 'commonjs'*/
     /* Source Map Options */
     // "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. */
     // "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. */
